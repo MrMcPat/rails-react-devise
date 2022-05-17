@@ -1,7 +1,7 @@
 To use, run in command line:
 
 cd rails-react-devise-tutorial
-yarn install
+bundle install
 rails db:migrate
 (optional) rails db:seed
 cd client
