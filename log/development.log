@@ -291,3 +291,247 @@ Processing by WelcomeController#home as HTML
 Completed 200 OK in 710ms (Views: 706.9ms | ActiveRecord: 0.3ms | Allocations: 2472772)
 
 
+Started GET "/" for ::1 at 2022-05-17 17:24:19 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/welcome/home.html.erb:2
+  Rendered welcome/home.html.erb within layouts/application (Duration: 4.3ms | Allocations: 5294)
+  Rendered layout layouts/application.html.erb (Duration: 680.6ms | Allocations: 2470992)
+Completed 200 OK in 685ms (Views: 681.5ms | ActiveRecord: 0.4ms | Allocations: 2472778)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-05-17 17:24:24 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PWWqNSd9QhHIEELOGK0HiPxda8W8TYCdsXMuoNPFqGzpZFFzng3ZSNrAN7+QfEw0O0LfNuHtdsMCVCdMIxEWPA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.1ms | Allocations: 4438)
+
+
+Started GET "/" for ::1 at 2022-05-17 17:24:24 -0400
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 1.4ms | Allocations: 182)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 10349)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 10794)
+
+
+Started GET "/" for ::1 at 2022-05-17 17:24:53 -0400
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.6ms | Allocations: 158)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 10345)
+Completed 200 OK in 16ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 10780)
+
+
+Started GET "/app" for ::1 at 2022-05-17 17:24:59 -0400
+Processing by WelcomeController#app as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-17 17:24:59 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 590)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 4119)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 14303)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 15855)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-17 17:25:14 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 134)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 6.3ms | Allocations: 1250)
+  Rendered layout layouts/application.html.erb (Duration: 21.4ms | Allocations: 11424)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 12059)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-17 17:25:20 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wUhbzOL7qsqxRp3r4gv2u4AUb6cSRz4E1iwlUSIGZnXN02yvwmw6im2yY/uiw3cXMvCCrgNe4tMQLsbBBtkVhw==", "user"=>{"email"=>"p@p.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "p@p.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 163ms (ActiveRecord: 0.5ms | Allocations: 1969)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wUhbzOL7qsqxRp3r4gv2u4AUb6cSRz4E1iwlUSIGZnXN02yvwmw6im2yY/uiw3cXMvCCrgNe4tMQLsbBBtkVhw==", "user"=>{"email"=>"p@p.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 134)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1246)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 11411)
+Completed 200 OK in 139ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 12629)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-05-17 17:25:24 -0400
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QIPXkQJWEYZGLUXeinwFHBF2/RKzv4Bvg2eguvyi8elsl0w1m2YLMJMfWMv/t+62vt/8fBsZYRldm3KGwg3xIQ==", "user"=>{"email"=>"p@p.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "p@p.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/app
+Completed 302 Found in 163ms (ActiveRecord: 0.9ms | Allocations: 5881)
+
+
+Started GET "/app" for ::1 at 2022-05-17 17:25:24 -0400
+Processing by WelcomeController#app as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/app.html.erb within layouts/application
+[Webpacker] Compiling...
+Started GET "/users/password/new" for ::1 at 2022-05-17 17:25:27 -0400
+[Webpacker] Compiled all packs in /Users/patrickliang/Desktop/Development/code/rails-react-devise/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run next command `yarn upgrade`
+
+  Rendered welcome/app.html.erb within layouts/application (Duration: 3984.7ms | Allocations: 546138)
+  Rendered layout layouts/application.html.erb (Duration: 3988.3ms | Allocations: 556318)
+Completed 200 OK in 3990ms (Views: 3988.6ms | ActiveRecord: 0.1ms | Allocations: 557824)
+
+
+Processing by Devise::PasswordsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1422)
+
+
+Started GET "/api/v1/posts" for ::1 at 2022-05-17 17:25:28 -0400
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:5:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 1.8ms | ActiveRecord: 0.5ms | Allocations: 5114)
+
+
+Started GET "/api/v1/posts" for ::1 at 2022-05-17 17:25:37 -0400
+Processing by Api::V1::PostsController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:5:in `index'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/controllers/api/v1/posts_controller.rb:6:in `index'
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 0.5ms | Allocations: 1557)
+
+
+Started GET "/users/password/new" for ::1 at 2022-05-17 17:25:37 -0400
+Processing by Devise::PasswordsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms | Allocations: 1314)
+
+
+Started GET "/" for ::1 at 2022-05-17 17:25:40 -0400
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/welcome/home.html.erb:2
+  Rendered welcome/home.html.erb within layouts/application (Duration: 4.8ms | Allocations: 779)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 11658)
+Completed 200 OK in 28ms (Views: 26.4ms | ActiveRecord: 0.4ms | Allocations: 12137)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-05-17 17:25:41 -0400
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"T1g4cOFnsUaOUYZlik6ooQel8CM56WyFMU2TfrIOBxQsBTUVtij0C24HHZbGkUXoLKkXbwKd02qhfauoKq4qMA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms | Allocations: 1620)
+
+
+Started GET "/" for ::1 at 2022-05-17 17:25:41 -0400
+Processing by WelcomeController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering welcome/home.html.erb within layouts/application
+  Rendered welcome/home.html.erb within layouts/application (Duration: 0.4ms | Allocations: 160)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 10352)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 10791)
+
+
+Started GET "/app" for ::1 at 2022-05-17 17:25:43 -0400
+Processing by WelcomeController#app as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 279)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-17 17:25:43 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 11406)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 12062)
+
+
+Started GET "/users/password/new" for ::1 at 2022-05-17 17:25:46 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 186)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 167)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1462)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 11611)
+Completed 200 OK in 29ms (Views: 24.0ms | ActiveRecord: 0.0ms | Allocations: 12645)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-05-17 17:25:49 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 84)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1613)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 11762)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 12888)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-05-17 17:26:08 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 9)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 78)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1219)
+  Rendered layout layouts/application.html.erb (Duration: 21.1ms | Allocations: 11397)
+Completed 200 OK in 24ms (Views: 22.3ms | ActiveRecord: 0.0ms | Allocations: 11964)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-17 17:26:13 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 134)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1255)
+  Rendered layout layouts/application.html.erb (Duration: 19.3ms | Allocations: 11404)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.0ms | Allocations: 12037)
+
+
+Started GET "/users/password/new" for ::1 at 2022-05-17 17:26:14 -0400
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 9)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 797)
+  Rendered layout layouts/application.html.erb (Duration: 17.1ms | Allocations: 10946)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.0ms | Allocations: 11487)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-05-17 17:26:17 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 134)
+  Rendered /Users/patrickliang/.rvm/gems/ruby-2.7.4/gems/devise-4.8.1/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 1246)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | Allocations: 11392)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 12022)
+
+

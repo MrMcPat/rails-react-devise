@@ -1,41 +1,40 @@
-import React, { Component }               from 'react'
+import React, { Component } from "react";
 
 class NewPost extends Component {
-
   state = {
-    title: '',
-    content: ''
-  }
+    title: "",
+    content: "",
+  };
 
-  handleChange = e => {
+  handleChange = (e) => {
     let newValue = e.target.value;
     let key = e.target.name;
     this.setState({
-      [key]: newValue
+      [key]: newValue,
     });
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
-    let data = {post: this.state};
+    let data = { post: this.state };
     let token = document.querySelector('meta[name="csrf-token"]').content;
-    fetch('api/v1/posts', {
-      method: 'POST',
+    fetch("api/v1/posts", {
+      method: "POST",
       headers: {
         "Content-Type": "application/json",
-        'X-Requested-With': 'XMLHttpRequest',
-        'X-CSRF-Token': token
+        "X-Requested-With": "XMLHttpRequest",
+        "X-CSRF-Token": token,
       },
       redirect: "error",
-      body: JSON.stringify(this.state)
+      body: JSON.stringify(this.state),
     })
-      .then(resp => {
-        resp.json()
+      .then((resp) => {
+        resp.json();
       })
-      .then(post => {
-        this.props.history.push('/');
+      .then((post) => {
+        this.props.history.push("/");
       });
-  }
+  };
 
   render() {
     return (
@@ -46,12 +45,18 @@ class NewPost extends Component {
         </p>
         <p>
           <label htmlFor="content">Content: </label>
-          <textarea name="content" id="" cols="30" rows="10" onChange={this.handleChange}></textarea>
+          <textarea
+            name="content"
+            id=""
+            cols="30"
+            rows="10"
+            onChange={this.handleChange}
+          ></textarea>
         </p>
         <input type="submit" value="Create Post" />
       </form>
-    )
+    );
   }
 }
 
-export default NewPost
+export default NewPost;
